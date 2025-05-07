@@ -33,15 +33,18 @@ String hardImage = "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_
       appBar: AppBar(title: Text("Photos"),centerTitle: true,),
       body: FutureBuilder(future: getPhotos(), builder: (context, AsyncSnapshot<List<PhotoModel>> snapshot){
        if(!snapshot.hasData){
-         return CircularProgressIndicator();
+         return Center(child: CircularProgressIndicator());
        }
        else{
          return ListView.builder(
            itemCount: 100,
            itemBuilder: (context, index) {
-             return ListTile(
-               leading: CircleAvatar(backgroundImage: NetworkImage(hardImage),),
-               title: Text(snapshot.data![index].title.toString()),
+             return Card(
+               elevation: 5,
+               child: ListTile(
+                 leading: CircleAvatar(backgroundImage: NetworkImage(hardImage),),
+                 title: Text(snapshot.data![index].title.toString()),
+               ),
              );
            },);
        }

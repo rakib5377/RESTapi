@@ -36,13 +36,14 @@ class _UsersScreenState extends State<UsersScreen> {
         future: getUserApi(),
         builder: (context,AsyncSnapshot<List<UsersModel>> snapshot) {
           if (!snapshot.hasData) {
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           }
           else {
             return ListView.builder(
               itemCount: usersList.length,
               itemBuilder: (context, index) {
                 return Card(
+                  elevation: 5,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(

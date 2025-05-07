@@ -27,7 +27,7 @@ class _UserScreenWithoutModelState extends State<UserScreenWithoutModel> {
       appBar: AppBar(title: Text("Users"), centerTitle: true),
       body: FutureBuilder(future: getUserApi(), builder: (context, snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting){
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         }else{
           return ListView.builder(
             itemCount: data.length,

@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ttb_restapi/screens/home_screen.dart';
 import 'package:ttb_restapi/screens/photos.dart';
+import 'package:ttb_restapi/screens/productScreenComplexJson.dart';
 import 'package:ttb_restapi/screens/user_screen_without_model.dart';
 import 'package:ttb_restapi/screens/users_screen.dart';
 class Mainscreen extends StatefulWidget {
@@ -16,7 +17,8 @@ class _MainscreenState extends State<Mainscreen> {
     HomeScreen(),
     Photos(),
     UsersScreen(),
-    UserScreenWithoutModel()
+    UserScreenWithoutModel(),
+    Productscreencomplexjson(),
   ];
   int _currentIndex = 0;
   void changeIndex(int index){
@@ -29,12 +31,14 @@ class _MainscreenState extends State<Mainscreen> {
     return Scaffold(
       body: screens.elementAt(_currentIndex),
       bottomNavigationBar: CurvedNavigationBar(
-        height: 45,animationDuration: Duration(milliseconds: 200),
+        height: 40,animationDuration: Duration(milliseconds: 200),buttonBackgroundColor: Colors.blueGrey.shade500,
+          backgroundColor: Colors.blueGrey.shade200,
           items: [
             Icon(Icons.home),
             Icon(Icons.photo),
             Icon(Icons.person),
             Icon(Icons.person_add_disabled),
+            Icon(Icons.shopping_bag),
           ],
         onTap: changeIndex,
         index: _currentIndex,

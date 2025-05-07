@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ],),
       body: FutureBuilder(future: getPostApi(), builder: (context, snapshot) {
         if(!snapshot.hasData){
-          return CircularProgressIndicator();
+          return Center(child: CircularProgressIndicator());
         }else{
           return ListView.builder(
             itemCount: postList.length,
