@@ -35,6 +35,8 @@ class _ProductscreencomplexjsonState extends State<Productscreencomplexjson> {
               itemCount: snapshot.data?.data?.length,
               itemBuilder: (context, index) {
               return Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     height: MediaQuery.of(context).size.height * .3,
@@ -72,7 +74,9 @@ class _ProductscreencomplexjsonState extends State<Productscreencomplexjson> {
                           radius: 30,backgroundImage: NetworkImage(snapshot.data!.data![index].shop!.image.toString()),),
                       trailing: Text(snapshot.data!.data![index].shop!.name.toString(),style: TextStyle(fontSize: 16),),
                     ),
-                  )
+                  ),
+                  Icon(snapshot.data!.data![index].inWishlist == false ? Icons.favorite_outlined : Icons.favorite_border)
+                  
                 ],
               );
             },);

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        appBarTheme: AppBarTheme(centerTitle: true),
+        appBarTheme: AppBarTheme(centerTitle: true,elevation: 10),
       ),
       home:Mainscreen()
     );
